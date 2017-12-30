@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Wiki Viewer App</title>
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cyborg/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<h3>WIKIPEDIA VI<span class="fa fa-eye"></span>W<span class="fa fa-eye">R</span></h3>
+		<div>Coded with <span class="fa fa-heart" style="color: red"></span> and <span class="fa fa-coffee" style="color: brown"></span> by <a href="markmuthii.me" target="_blank">Mark Muthii</a> </div>
+		<hr>
+		<div class="container">
+			<div class="well">
+				<div id="searchForm">
+					<form>
+						<input type="text" class="form-control" id="searchform" placeholder="Enter search parameter...">
+						<button style="display: none;" id="searchButton"></button>
+						<!-- <button class="btn btn-primary" id="randomButton" onclick="showRandom()">Show Random Article</button>
+	 -->					<!-- <input type="submit" id="searchButton" style="display: none;"> -->
+					</form>
+					<div class="row">
+						<div class="col-md-6">
+							<div style="text-align: center">
+								<label id="submitLabel" for="searchButton" tabindex="0" class="btn btn-primary">Search Wikipedia</label>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div style="text-align: center">
+								<a href="https://en.wikipedia.org/wiki/Special:Random" id="searchRandom" class="btn btn-primary" target="_blank">Show Random Article</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="buttons">
+					
+				</div>
+
+			</div>
+			<div class="text-center hidden" id="preloader">
+				<img src="img/pre.gif" alt="Loading" width="50px" height="50px">
+				<div style="margin-top: 10px">Working...</div>
+			</div>
+			<div id="error"></div>
+			<div id="results"></div>
+		</div>
+	</div>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+		$( document ).ajaxStart(() => {
+        $("#preloader").removeClass('hidden');
+    });
+
+    $( document ).ajaxComplete(() => {
+        $("#preloader").addClass('hidden');
+    });
+	</script>
+	
+</body>
+</html>
